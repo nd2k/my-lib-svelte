@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@100&display=swap');
+
+:root {
+    --primary: #001524;
+    --secondary: #15616d;
+    --tertiary: #ffecd1;
+    --fourthary: #ff7d00;
+    --fifthary: #78290f;
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #cccccc;
+    --font-family: 'DM Sans', sans-serif;
+}
+
+.primary {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+.secondary {
+    color: var(--white);
+    background-color: var(--secondary);
+}
+
+.tertiary {
+    color: var(--black);
+    background-color: var(--tertiary);
+}
+
+.fourthary {
+    color: var(--white);
+    background-color: var(--fourthary);
+}
+
+.fifthary {
+    color: var(--white);
+    background-color: var(--fifthary);
+}
