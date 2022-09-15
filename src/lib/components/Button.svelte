@@ -1,5 +1,8 @@
 <script lang="ts">
     import { ButtonTypes } from '$lib/types/interfaces';
+    import { getPropertyValue } from '$lib/utils/utils';
+
+    import { onMount } from 'svelte';
 
     export let type: any = ButtonTypes.button;
     export let disabled: boolean = false;
@@ -8,8 +11,19 @@
     export let radius: string = "0"
     export let fontSize: string = "1.2rem"
 
-    const style = `width: ${size}; border-radius: ${radius}; font-size: ${fontSize};`;
+    onMount(() => {
+        const property = getPropertyValue(window, `--${variant}`);
+        console.log(property);
+        
+    })    
+    
+    const style = `
+        width: ${size}; 
+        border-radius: ${radius}; 
+        font-size: ${fontSize};
+        `;
 </script>
+
 
 <button {type} {disabled} class={variant} {style} on:click>
     <slot />
@@ -28,6 +42,7 @@
         margin: auto;
         &:hover {
             filter: brightness(0.85);
+            border: 1px solid inherit;
         }
         &:active {
             box-shadow: none;
