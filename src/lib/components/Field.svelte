@@ -1,16 +1,19 @@
 <script lang="ts">
     import type { ValidationResponse } from '$lib/types/interfaces';
-    import Fa from 'svelte-fa';
     import { createEventDispatcher } from 'svelte';
+    import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
     import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
+    import Icon from './Icon.svelte';
   
     export let id: string = "id";
     export let placeholder: string = "placeholder";
     export let type: string = "text";
-    export let icon: any = "null"
     export let value: string = "";
     export let validationResponse: ValidationResponse = {valid: false, errorMessage: ""}
     export let reset: boolean = false;
+    export let variant: string = "--primary-color-500";
+
+    const style = `${variant}`;
   
     let status: boolean = false;
   
@@ -35,20 +38,15 @@
     }
   
   </script>
-  <div class="field">
+  <div class='field'>
     <div class="line_1">
-      {#if icon !== "null"}
-        <div class="{status === true ? 'icon active' : 'icon'}">
-            {#if validationResponse.valid}
-              <Fa icon={faCheck} scale={1.2} /> 
-            {:else}                                                 
-              <Fa icon={icon} scale={1.2} />
-            {/if}
-        </div>
-      {/if}
+      <Icon 
+          icon= {faUser}
+          variant="--fifthary-color-700"
+      />
       <div class="input_fields">
         <input 
-        class="{status === true ? 'active' : ''}" 
+        class="{status === true ? 'active' : ''} {style}" 
         {id} 
         {placeholder} 
         autocomplete="off"
@@ -77,16 +75,16 @@
         justify-content: center;
         align-items: center;
         .icon {
-          background-color: red;
-          border: 1px solid red;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           color: white;
+          width: 2.3rem;
+          height: 2.3rem;
           &.active {
-            // background-color: $color-4;
-            // color: $color-1;
+            background-color: blue;
+            color: black;
           }
         }
         .input_fields {
@@ -99,10 +97,14 @@
             border-radius:2rem;
             box-sizing:border-box;
             padding: 0 1rem;
+            height:2.3rem;
+            margin: 1rem;
+            min-width: 10rem;
+            font-size: 1.1rem;
             &.active {
-            //   border: 1px solid $color-2;
-            //   background-color: $color-4;
-            //   color: $color-1;
+              // border: 1px solid red;
+              // background-color: red;
+              color: black;
             }
           }
         }
@@ -120,36 +122,4 @@
         }
       }
     }
-    .mobile {
-        .line_1 {
-          .icon {
-            width: 2rem;
-            height: 2rem;
-          }
-          .input_fields {
-            input {
-              height: 2rem;
-              margin: 0.5rem;
-              min-width: 5rem;
-              font-size: 0.9rem;
-            }
-          }
-        }
-      }
-      .desktop {
-        .line_1 {
-          .icon {
-            width: 2.3rem;
-            height: 2.3rem;
-          }
-          .input_fields {
-            input {
-              height:2.3rem;
-              margin: 1rem;
-              min-width: 10rem;
-              font-size: 1.1rem;
-            }
-          }
-        }
-      }  
   </style>

@@ -1,38 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@100&display=swap');
 
 :root {
-    --primary: #001524;
-    --secondary: #15616d;
-    --tertiary: #ffecd1;
-    --fourthary: #ff7d00;
-    --fifthary: #78290f;
-    --white: #ffffff;
-    --black: #000000;
-    --grey: #cccccc;
+    --primary-color: rgb(88, 129, 87);
+    --secondary-color: rgb(250, 243, 221);
+    --tertiary-color: rgb(184, 242, 230);
+    --fourthary-color: rgb(174, 217, 224);
+    --fifthary-color: rgb(94, 100, 114);
+    --white-color: rgb(255, 255, 255);
+    --black-color: rgb(0, 0, 0);
+    --alert-color:rgb(214, 40, 40);
+    --grey: rgb(128, 128, 128);;
     --font-family: 'DM Sans', sans-serif;
 }
 
-.primary {
-    color: var(--white);
-    background-color: var(--primary);
+/* .--primary-color {
+    color: var(--white-color);
+    background-color: var(--primary-color);
 }
 
-.secondary {
-    color: var(--white);
-    background-color: var(--secondary);
-}
+.--secondary-color {
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+} */
 
-.tertiary {
-    color: var(--black);
-    background-color: var(--tertiary);
+/*.tertiary {
+    color: var(--black-color);
+    background-color: var(--tertiary-color);
 }
 
 .fourthary {
-    color: var(--white);
-    background-color: var(--fourthary);
+    color: var(--white-color);
+    background-color: var(--fourthary-color);
 }
 
 .fifthary {
-    color: var(--white);
-    background-color: var(--fifthary);
-}
+    color: var(--white-color);
+    background-color: var(--fifthary-color);
+} */

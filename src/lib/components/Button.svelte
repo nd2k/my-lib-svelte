@@ -1,8 +1,8 @@
 <script lang="ts">
     import { ButtonTypes } from '$lib/types/interfaces';
-    import { getPropertyValue } from '$lib/utils/utils';
 
     import { onMount } from 'svelte';
+    import { getPropertyValue } from '$lib/utils/colorUtils';
 
     export let type: any = ButtonTypes.button;
     export let disabled: boolean = false;
@@ -11,11 +11,7 @@
     export let radius: string = "0"
     export let fontSize: string = "1.2rem"
 
-    onMount(() => {
-        const property = getPropertyValue(window, `--${variant}`);
-        console.log(property);
-        
-    })    
+    
     
     const style = `
         width: ${size}; 

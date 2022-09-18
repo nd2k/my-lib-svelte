@@ -9,4 +9,4 @@ export enum ButtonTypes {
 export interface ValidationResponse {
     valid: Boolean,
     errorMessage?: String 
-  }
+}
